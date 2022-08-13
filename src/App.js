@@ -10,27 +10,80 @@ import {
 
 export default function App() {
   const [show, setShow] = useState(false);
-  const handleInputChange = (e) => {
-    console.log(e.target.value);
+
+  //if valid
+  const valid = (item, v_icon, inv_icon) => {
+    let text = document.querySelector(`#${item}`);
+    text.style.opacity = "1";
+
+    let valid_icon = document.querySelector(`#${item} .${v_icon}`);
+    valid_icon.style.opacity = "1";
+
+    let invalid_icon = document.querySelector(`#${item} .${inv_icon}`);
+    invalid_icon.style.opacity = 0;
   };
-  const showHide = () => {};
+  //if invalid
+  const invalid = (item, v_icon, inv_icon) => {
+    let text = document.querySelector(`#${item}`);
+    text.style.opacity = ".5";
+
+    let valid_icon = document.querySelector(`#${item} .${v_icon}`);
+    valid_icon.style.opacity = "0";
+
+    let invalid_icon = document.querySelector(`#${item} .${inv_icon}`);
+    invalid_icon.style.opacity = "1";
+  };
+
+  //handle input
+  const handleInputChange = (e) => {
+    const password = e.target.value;
+
+    if (password.match(/[A-Z]/) != null) {
+      valid("capital", "fa-checks", "fa-times");
+    } else {
+      invalid("capital", "fa-checks", "fa-times");
+    }
+    if (password.match(/[0-9]/) != null) {
+      valid("num", "fa-checks", "fa-times");
+    } else {
+      invalid("num", "fa-checks", "fa-times");
+    }
+    if (password.match(/[!@#$^&*%]/) != null) {
+      valid("char", "fa-checks", "fa-times");
+    } else {
+      invalid("char", "fa-checks", "fa-times");
+    }
+    if (password.length > 7) {
+      valid("more8", "fa-checks", "fa-times");
+    } else {
+      invalid("more8", "fa-checks", "fa-times");
+    }
+  };
+
+  const handleShowhide = () => {
+    setShow(!show);
+  };
   return (
     <div className="App">
       <div className="container">
         <input
-          type="password"
+          type={show ? "text" : "password"}
           className="password"
-          placeholder=" Enter your password"
+          placeholder="Enter your password"
           onChange={handleInputChange}
         />
         {show ? (
           <FontAwesomeIcon
-            icon={faEyeSlash}
+            onClick={handleShowhide}
+            icon={faEye}
             id="show_hide"
-            onClick={showHide}
           />
         ) : (
-          <FontAwesomeIcon icon={faEye} id="show_hide" onClick={showHide} />
+          <FontAwesomeIcon
+            onClick={handleShowhide}
+            icon={faEyeSlash}
+            id="show_hide"
+          />
         )}
         <p id="capital">
           <FontAwesomeIcon className="fa-times icon" icon={faTimes} />
