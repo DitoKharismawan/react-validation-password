@@ -82,7 +82,6 @@ export default function App() {
           type={show ? "text" : "email"}
           className="email"
           placeholder="Enter your Email/ Username"
-          onChange={handleInputChange}
         />
         <label>Password: </label>
         <input
