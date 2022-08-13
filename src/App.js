@@ -123,6 +123,7 @@ export default function App() {
           <FontAwesomeIcon className="fa-checks icon" icon={faCheck} />
           <span>+8 Characters</span>
         </p>
+        <button className="save-btn">Submit</button>
       </div>
     </div>
   );

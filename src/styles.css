@@ -125,3 +125,10 @@ body {
   height: 22px;
   line-height: 0px;
 }
+.container .save-btn {
+  color: #fff;
+  font-size: 22px;
+  background: #29ca8e;
+  widht: 250px;
+  height: 40px;
+}
