@@ -15,23 +15,33 @@ export default function App() {
   const valid = (item, v_icon, inv_icon) => {
     let text = document.querySelector(`#${item}`);
     text.style.opacity = "1";
+    text.style.color = "red";
 
     let valid_icon = document.querySelector(`#${item} .${v_icon}`);
     valid_icon.style.opacity = "1";
+    valid_icon.style.color = "green";
+    text.style.color = "green";
 
     let invalid_icon = document.querySelector(`#${item} .${inv_icon}`);
     invalid_icon.style.opacity = 0;
+    valid_icon.style.color = "green";
+    text.style.color = "green";
   };
   //if invalid
   const invalid = (item, v_icon, inv_icon) => {
     let text = document.querySelector(`#${item}`);
+
     text.style.opacity = ".5";
 
     let valid_icon = document.querySelector(`#${item} .${v_icon}`);
     valid_icon.style.opacity = "0";
+    valid_icon.style.color = "green";
+    text.style.color = "green";
 
     let invalid_icon = document.querySelector(`#${item} .${inv_icon}`);
     invalid_icon.style.opacity = "1";
+    invalid_icon.style.color = "red";
+    text.style.color = "red";
   };
 
   //handle input
@@ -66,6 +76,15 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
+        <h1>User Login</h1>
+        <label>Email/Username : </label>
+        <input
+          type={show ? "text" : "email"}
+          className="email"
+          placeholder="Enter your Email/ Username"
+          onChange={handleInputChange}
+        />
+        <label>Password: </label>
         <input
           type={show ? "text" : "password"}
           className="password"

@@ -28,12 +28,23 @@ body {
 .container {
   background: white;
   width: 400px;
-  height: 400px;
+  height: 600px;
   padding: 50px;
   border-radius: 50px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 9);
+  align-self: auto;
 }
-
+.container .email {
+  width: 100%;
+  height: 45px;
+  padding: 0 50px 0 20px;
+  border-radius: 5px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  font-size: large;
+  border: 1px solid rgb(#31a3a3);
+  transition: 0.4s;
+}
 .container .password {
   width: 100%;
   height: 45px;
@@ -45,7 +56,9 @@ body {
   border: 1px solid rgb(#31a3a3);
   transition: 0.4s;
 }
-
+.email:focus {
+  box-shadow: 0 0 30px #9271f0;
+}
 .password:focus {
   box-shadow: 0 0 30px #9271f0;
 }
@@ -58,23 +71,32 @@ body {
 
 .container p span {
   font-size: 22px;
-  color: rgb(26, 43, 68);
+
   margin-left: 45px;
 }
 
 .fa-times {
+  font-size: 22px;
+  color: rgb(35, 241, 7);
+  margin-left: 45px;
   opacity: 0;
+  border: 2px solid rgb(35, 241, 7);
 }
 .fa-checks {
+  font-size: 22px;
+  color: rgb(35, 241, 7);
+  margin-left: 45px;
   opacity: 1;
+  border: 2px solid rgb(35, 241, 7);
 }
 
 .container p .icon {
+  margin: 0px 5px 30px;
   position: absolute;
   text-align: center;
-  width: 32px;
-  height: 32px;
-  line-height: 30px;
+  width: 25px;
+  height: 22px;
+  line-height: 15px;
   font-size: large;
   border-radius: 50%;
   color: rgb(26, 43, 68);
@@ -85,4 +107,21 @@ body {
   font-size: 22px;
   transform: translateX(260px) translateY(-34px);
   cursor: pointer;
+}
+.container label {
+  justify-content: flex;
+  font-size: 20px;
+  font-weight: bold;
+  float: right;
+  width: 290px;
+  line-height: 2;
+  line-break: 2;
+}
+
+.container h1 {
+  margin: 0px 10px 10px;
+  width: 590px;
+  padding: 0 10px 0 70px;
+  height: 22px;
+  line-height: 0px;
 }
