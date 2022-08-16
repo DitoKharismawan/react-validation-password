@@ -5,12 +5,14 @@
     background-color: #1976d2;
     color: #fff;
     font-size: 1.25rem;
-    padding: 1rem 2rem;
-    border-radius: 5px;
+    padding: .5rem 1rem;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    justify-content: center;
+    margin: 0px 75px 20px;
 
     &:hover {
         background-color: #2b92f7;
