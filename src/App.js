@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
+import "./App.scss";
+import 'boxicons/css/boxicons.min.css';
+import Button from './components/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
@@ -9,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function App() {
-  const [show, setShow] = useState(false);
+  const [loading,setLoading,show, setShow] = useState(false);
 
   //if valid
   const valid = (item, v_icon, inv_icon) => {
@@ -123,8 +126,14 @@ export default function App() {
           <FontAwesomeIcon className="fa-checks icon" icon={faCheck} />
           <span>+8 Characters</span>
         </p>
-        <button className="save-btn">Submit</button>
+           <Button
+                loading={loading}
+                onClick={() => setLoading(!loading)}
+            >
+                Submit
+            </Button>
       </div>
     </div>
-  );
+
+    );
 }
